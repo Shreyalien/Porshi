@@ -1,31 +1,34 @@
 <div align="center">
 
-# 🏘️ Porshi (পড়শী) — Community Services & Mutual-Aid Network
+# 🏘️ Porshi (পড়শী)
 
-### আপনার পাশে, আপনার জন্য · Bangladesh's Verified Neighborhood Services Directory
+### আপনার পাশে, আপনার জন্য · Bangladesh's Verified Neighborhood Services Directory & Community Platform
 
 <br/>
 
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-porshi.onrender.com-00C7B7?style=for-the-badge&logo=render&logoColor=white)](https://porshi.onrender.com)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose_ODM-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![CSS3](https://img.shields.io/badge/CSS3-Modern_Themes-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![CSS3](https://img.shields.io/badge/CSS3-Design_System-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](LICENSE)
 
 <br/>
 
-> **A full-stack, hyper-local neighborhood directory and civic mutual-aid web platform designed to connect Bangladeshi citizens directly with 40+ categories of verified doorstep technicians, healthcare practitioners, tutors, and 24/7 emergency hotlines without intermediaries or broker commissions.**
+> **A full-stack, hyper-local civic services directory and mutual-aid web platform engineered to connect Bangladeshi citizens directly with 40+ categories of verified doorstep technicians, healthcare practitioners, tutors, and 24/7 emergency hotlines without intermediaries or broker commissions.**
 
 <br/>
 
 <p align="center">
-  <img src="banner.png" alt="Porshi Platform Hero Showcase" width="100%" style="border-radius: 16px; box-shadow: 0 12px 36px rgba(0,0,0,0.3);" />
+  <a href="https://porshi.onrender.com" target="_blank">
+    <img src="banner.png" alt="Porshi Platform Hero Showcase" width="100%" style="border-radius: 16px; box-shadow: 0 12px 36px rgba(0,0,0,0.3);" />
+  </a>
 </p>
 
 <br/>
 
-[🚀 Quick Start](#-quick-start--installation) · [✨ Core Modules](#-core-modules--features) · [🏗️ Architecture](#%EF%B8%8F-system-architecture) · [🗄️ Database Schemas](#%EF%B8%8F-database-schemas-mongodb) · [🔌 API Reference](#-api-endpoints-reference) · [📄 License](#-license)
+[🌐 Live Application](https://porshi.onrender.com) · [✨ Key Features](#-key-features) · [🏗️ Architecture](#%EF%B8%8F-system-architecture) · [🗄️ Database Schemas](#%EF%B8%8F-database-schemas-mongodb) · [🔌 API Reference](#-api-endpoints-reference) · [🚀 Getting Started](#-getting-started) · [📄 License](#-license)
 
 </div>
 
@@ -33,39 +36,41 @@
 
 ## 📖 Overview
 
-In urban and semi-urban Bangladesh, finding reliable and verified household service specialists (electricians, plumbers, AC technicians, appliance repairers, home tutors, ambulance drivers, or local health workers) often relies on fragmented word-of-mouth or exploitative agency middlemen.
+In urban and semi-urban Bangladesh, discovering reliable and verified household service specialists (electricians, plumbers, AC technicians, appliance mechanics, home tutors, emergency ambulance drivers, or local health practitioners) heavily depends on unverified word-of-mouth or exploitative third-party middlemen.
 
-**Porshi (পড়শী)** is an open-source, community-driven civic platform engineered to solve this challenge. It provides:
-- **Direct, Zero-Commission Connections**: Consumers contact local verified specialists directly via phone, WhatsApp, or instant appointment scheduling.
-- **National ID (NID) & Community Trust Verification**: Dual-tier verification distinguishes certified professional technicians from community-recommended neighbors.
-- **Guest-Safe Data Architecture**: Public directory browsing is unrestricted, while direct contact numbers and active community interactions remain safeguarded behind verified authentication.
-- **24/7 Life Support & Emergency Hub**: Instant 1-tap dispatch for ambulances, emergency oxygen, 24/7 pharmacies, LPG gas delivery, and toll-free national emergency lines (999, 333, 109, 16263).
+**Porshi (পড়শী)** is an open-source, community-driven civic platform developed to solve this challenge through:
+- **Direct, Zero-Commission Access**: Connects consumers with local specialists directly via phone, WhatsApp, or instant appointment bookings.
+- **Dual-Tier Verification**: Distinguishes certified National ID (NID) verified professionals from community-recommended local providers.
+- **Privacy-First Data Protection**: Unrestricted guest directory browsing with direct telephone numbers and active discussions secured behind verified authentication.
+- **24/7 Life Support & Emergency Hub**: Immediate one-click access to ambulances, medical oxygen, 24/7 pharmacies, LPG gas delivery, and toll-free national emergency services (999, 333, 109, 16263).
+
+🔗 **Live Deployment:** [https://porshi.onrender.com](https://porshi.onrender.com)
 
 ---
 
-## ✨ Core Modules & Features
+## ✨ Key Features
 
-### 1. 🔍 Comprehensive 40+ A-Z Service Directory
-- **Interactive Geospatial Filters**: Multi-range radius selector (1 km to 25 km), category groupings (*Home Services, Repairs & Tech, Health & Care, Education, Transportation, Lifestyle & Events*), rating thresholds (★ 3.0+ / 4.0+), and real-time pricing range sliders.
-- **Radar Service Map**: Live radial proximity scanner visualizing neighborhood technicians around the user's active geographic coordinate.
-- **Instant Keyword Search & Popular Chips**: Real-time filtering matching specialist names, sub-skills, service descriptions, and trade tags.
+### 1. 🔍 Geospatial 40+ A-Z Service Directory
+- **Multi-Parameter Search & Filter Engine**: Radial proximity filter (1 km to 25 km), category groups (*Home Services, Repairs & Tech, Health & Care, Education, Transportation, Lifestyle & Events*), rating thresholds (★ 3.0+ / 4.0+), and dynamic price range queries.
+- **Interactive Proximity Radar**: Visual map scanner plotting nearby neighborhood technicians around the user's selected administrative division/thana.
+- **Real-Time Dynamic Search**: Instant client-side keyword matching across specialist names, sub-skills, service descriptions, and trade tags.
 
-### 2. ⚡ 24/7 Instant Emergency Hub
-- Direct rapid-response hotlines for **Ambulance ICU & Oxygen**, **24/7 Pharmacy Delivery**, **15-Minute LPG Gas Cylinders**, **Emergency Electrician (Short Circuit / DB Board Fix)**, **Plumber / Pipe Burst Fix**, and **Local Palli Chikitshok & First Aid**.
-- Integrated toll-free Bangladesh Government emergency gateways: `999` (Police/Fire/Ambulance), `333` (Citizen Helpdesk), `109` (Women & Child Protection), and `16263` (Shastho Batayan Health Hotline).
+### 2. ⚡ 24/7 Rapid Emergency Response Hub
+- Direct contact access for **Emergency Ambulance (ICU & Oxygen)**, **24/7 Pharmacy Home Delivery**, **15-Minute LPG Gas Cylinder Dispatch**, **Emergency Electrician (Short Circuit / DB Board Fix)**, **Plumber / Pipe Burst Fix**, and **Local Practitioner & First Aid**.
+- Integrated national emergency shortcuts: `999` (Police, Fire, Ambulance), `333` (National Citizen Helpdesk), `109` (Women & Child Protection), and `16263` (Shastho Batayan Health Hotline).
 
-### 3. 💬 Neighborhood Community Forum & Discussion Board
-- **Geographic Scope Switching**: Filter discussions strictly within **My Area** (e.g., *Dhanmondi, Mirpur, Uttara*) or broadcast across **All Bangladesh**.
-- **Categorized Threads**: *Help Needed (জরুরি সাহায্য)*, *Recommendations (পরামর্শ / কারিগরের খোঁজ)*, *Neighborhood Safety (নিরাপত্তা)*, and *Local Events (এলাকার ইভেন্ট)*.
-- **Citizen Engagement**: Real-time thread upvotes, collapsible multi-turn reply chains, and neighbor advice timestamps.
+### 3. 💬 Neighborhood Community Discussions & Forum
+- **Dual Geographic Scopes**: Filter discussions strictly within **My Area** (e.g., *Dhanmondi, Mirpur, Uttara, Chittagong*) or broadcast across **All Bangladesh**.
+- **Categorized Civic Threads**: *Emergency Help (জরুরি সাহায্য)*, *Recommendations (পরামর্শ / কারিগরের খোঁজ)*, *Neighborhood Safety (নিরাপত্তা)*, and *Local Events (এলাকার ইভেন্ট)*.
+- **Community Interaction**: Post upvoting, collapsible discussion threads, and neighborly advice sharing.
 
-### 4. 👥 Dual Role Architecture & Dedicated Dashboards
-- **Citizen Consumer Dashboard**: Track active appointment bookings, status indicators (*Pending, Confirmed, Completed*), earned citizen trust points, and post-service worker review & star rating system.
-- **Service Pro Specialist Portal**: NID-verified technician control panel to accept/decline incoming service requests, inspect order addresses, and monitor average rating analytics.
+### 4. 👥 Dual Role Workspaces (Citizen Consumer vs Service Pro)
+- **Citizen Dashboard**: Manage service appointments, track status milestones (*Pending, Confirmed, Completed*), earn citizen participation points, and submit post-service worker reviews and star ratings.
+- **Service Pro Dashboard**: Control panel for verified specialists to accept or decline incoming customer requests, review job locations, and inspect performance analytics.
 
 ### 5. 🌐 Full Internationalization (i18n) & Modern Theming
-- **Instant Bilingual Switching**: Complete real-time locale toggle between **English (EN)** and **বাংলা (বাং)** with zero page reloads.
-- **Adaptive Day & Night Mode**: High-contrast dark theme (`#071225` deep navy) and clean light theme (`#f8fafc`) with custom drop-shadow rim filters ensuring calligraphy logo visibility across all viewports.
+- **Zero-Reload Bilingual Switching**: Full runtime dictionary translation between **English (EN)** and **বাংলা (বাং)**.
+- **Adaptive Day & Night Theme**: Deep navy dark theme and clean light theme with CSS drop-shadow filters ensuring calligraphy brand visibility across all devices.
 
 ---
 
@@ -75,28 +80,26 @@ In urban and semi-urban Bangladesh, finding reliable and verified household serv
 Porshi/
 ├── backend/
 │   ├── config/             # Database connection & environment configuration
-│   ├── models/             # MongoDB Mongoose data schemas
-│   │   ├── User.js         # Citizen & Service Pro user profiles with bcrypt auth
-│   │   ├── Listing.js      # 40+ Service provider directory listings & reviews
-│   │   └── Post.js         # Neighborhood community discussion threads & comments
-│   ├── routes/             # RESTful API endpoints
-│   │   ├── auth.js         # JWT Registration, login, OTP verification & sessions
-│   │   ├── listings.js     # CRUD operations for specialists & service ratings
-│   │   └── posts.js        # Community posts, scope filters & reply threads
-│   └── server.js           # Express application entry point & static asset server
+│   ├── models/             # Mongoose schemas (User, Listing, Post)
+│   ├── routes/             # RESTful API route controllers
+│   │   ├── auth.js         # JWT Authentication, registration & sessions
+│   │   ├── listings.js     # Directory search, worker profiles & reviews
+│   │   └── posts.js        # Community threads, comments & upvotes
+│   ├── seed.js             # Automated database population script
+│   └── server.js           # Express application entry point & static SPA host
 │
 ├── frontend/
-│   ├── assets/             # Brand logos, transparent calligraphy PNGs, hero images
-│   ├── bangladesh-data.js  # 8 Divisions, 64 Districts, and Upazila administrative dataset
+│   ├── assets/             # Brand logos, calligraphy PNGs, and artwork
+│   ├── bangladesh-data.js  # 8 Divisions, 64 Districts, and Upazilas dataset
 │   ├── i18n.js             # Bilingual dictionary (English & Bengali translation matrix)
-│   ├── index.html          # Semantic HTML5 Single Page Application (SPA)
-│   ├── script.js           # Core state machine, DOM rendering, modal managers & radar map
-│   └── style.css           # Responsive design system, CSS variables & glassmorphism
+│   ├── index.html          # Semantic HTML5 Single Page Application
+│   ├── script.js           # State management, view router & modal controllers
+│   └── style.css           # Modern CSS3 design system with responsive variables
 │
-├── .gitignore              # Standard git exclusion rules
-├── LICENSE                 # MIT Open-Source License
-├── package.json            # Project dependencies & startup scripts
-└── README.md               # Technical documentation & usage guide
+├── .gitignore              # Git ignore configuration
+├── LICENSE                 # MIT License
+├── package.json            # Project dependencies & runtime scripts
+└── README.md               # Documentation & deployment guide
 ```
 
 ---
@@ -195,7 +198,7 @@ Porshi/
 
 ---
 
-## 🚀 Quick Start & Installation
+## 🚀 Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18.x or higher)
@@ -221,38 +224,41 @@ MONGO_URI=mongodb://localhost:27017/porshi
 JWT_SECRET=porshi_super_secure_jwt_token_key_2026
 ```
 
-### 4. Start the Application
+### 4. Seed Initial Data (Optional)
 ```bash
-# Start backend server & serve frontend SPA
-npm start
-
-# Or start in standalone frontend mode:
-# Open frontend/index.html directly in any web browser
+npm run seed
 ```
 
-Once running, navigate to **`http://localhost:5000`** in your browser.
+### 5. Start the Application
+```bash
+# Start local production server
+npm start
+
+# Or start development mode with hot reload
+npm run dev
+```
+
+Open **`http://localhost:5000`** in your browser to view the application.
 
 ---
 
 ## ⚡ Default Demo Credentials
-
-For quick evaluation without manual signup:
 
 | Parameter | Value |
 | :--- | :--- |
 | **Demo Mobile Number** | `01700000000` |
 | **Demo Password** | `123456` |
 | **Demo OTP Code** | `123456` *(One-Click Autofill Enabled)* |
-| **Default Profile** | *Rakib Hasan (Citizen / Consumer)* |
-| **Pro Switcher** | *Md. Rahim (Rahim Electric Service)* |
+| **Citizen Profile** | *Rakib Hasan (Consumer)* |
+| **Service Pro** | *Md. Rahim (Rahim Electric Service)* |
 
 ---
 
-## 🛡️ Security & Privacy Architecture
+## 🛡️ Security & Privacy
 
-- **Phone Number Safeguarding**: Contact telephone numbers and WhatsApp links are protected from automated scrapers in Guest Mode and only unveiled to verified authenticated users.
-- **NID Verification Badge**: Specialists submitting authentic National ID credentials receive a prominent `🛡️ NID Verified` trust badge.
-- **Graceful Fallback**: The backend server seamlessly handles offline MongoDB states by operating in standalone client storage mode without crashing.
+- **Contact Number Protection**: Direct phone numbers and WhatsApp links are protected from automated scrapers in Guest Mode and only unveiled to authenticated users.
+- **NID Verification Badge**: Specialists submitting verified National ID credentials receive a prominent `🛡️ NID Verified` trust badge.
+- **Resilient Fallback Architecture**: The server operates with or without an active MongoDB connection, providing smooth standalone evaluation.
 
 ---
 
@@ -263,6 +269,7 @@ Developed with ❤️ for the citizens of Bangladesh by:
 **Shreya**
 - GitHub: [@Shreyalien](https://github.com/Shreyalien)
 - Project: [Porshi (পড়শী)](https://github.com/Shreyalien/Porshi)
+- Live: [porshi.onrender.com](https://porshi.onrender.com)
 
 ---
 
