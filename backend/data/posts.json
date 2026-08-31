@@ -1,0 +1,96 @@
+[
+  {
+    "title": "ধানমন্ডিতে অভিজ্ঞ HSC Math ও Physics টিউটর খুঁজছি",
+    "content": "ক্লাস ১২ (HSC 2026) এর জন্য একজন বুয়েট/ঢাবি পড়ুয়া দায়িত্বশীল হোম টিউটর দরকার সপ্তাহে ৩ দিন পড়ানোর জন্য। পরিচিত বিশ্বস্ত কেউ থাকলে জানান।",
+    "type": "question",
+    "attachedCategory": "tutor",
+    "division": "dhaka",
+    "district": "dhaka_city",
+    "upazila": "dhanmondi",
+    "area": "ধানমন্ডি",
+    "authorName": "রাফি চৌধুরী",
+    "upvotes": 12,
+    "replies": [
+      { "authorName": "তানভীর", "content": "ব্রাইট ফিউচার টিউটরের সাথে যোগাযোগ করতে পারেন, ওদের টিচাররা খুব ভালো।" }
+    ],
+    "createdAt": "2026-08-28T10:30:00.000Z"
+  },
+  {
+    "title": "মিরপুর ১০ এর করিম ইলেকট্রিশিয়ানের অসাধারণ সার্ভিস",
+    "content": "গত রাতে হঠাৎ মেইন সুইচে শর্ট সার্কিট হয়েছিল। করিম ভাইকে কল দেওয়ার ১৫ মিনিটের মধ্যে এসে খুব দক্ষতার সাথে সমাধান করে দিয়েছেন।",
+    "type": "recommendation",
+    "attachedCategory": "electrician",
+    "division": "dhaka",
+    "district": "dhaka_city",
+    "upazila": "mirpur",
+    "area": "মিরপুর ১০",
+    "authorName": "সাবিনা ইয়াসমিন",
+    "upvotes": 24,
+    "replies": [
+      { "authorName": "ফাহিম", "content": "হ্যাঁ, করিম ভাই অনেক বছর ধরে আমাদের এলাকায় কাজ করছেন।" }
+    ],
+    "createdAt": "2026-08-29T14:15:00.000Z"
+  },
+  {
+    "title": "জরুরি প্লাম্বার দরকার — বাথরুমে পাইপলাইন লিকেজ",
+    "content": "উত্তরা সেক্টর ৭-এ জরুরি ভিত্তিতে একজন দক্ষ প্লাম্বার প্রয়োজন। কমোড ও বেসিনের মেইন লাইনে লিকেজ হচ্ছে।",
+    "type": "question",
+    "attachedCategory": "plumber",
+    "division": "dhaka",
+    "district": "dhaka_city",
+    "upazila": "uttara",
+    "area": "উত্তরা",
+    "authorName": "জাহিদ হাসান",
+    "upvotes": 9,
+    "replies": [
+      { "authorName": "আকাশ প্লাম্বিং", "content": "আমরা উত্তরার লোকাল সার্ভিস প্রোভাইডার, সরাসরি কল করুন 01912-556734।" }
+    ],
+    "createdAt": "2026-08-30T11:00:00.000Z"
+  },
+  {
+    "title": "বিনামূল্যে ডায়াবেটিস ও ব্লাড প্রেশার চেকআপ ক্যাম্প — বনানী",
+    "content": "আগামী শুক্রবার সকাল ৯টা থেকে দুপুর ১টা পর্যন্ত বনানী কমিউনিটি সেন্টারে রোটারি ক্লাবের উদ্যোগে ফ্রি হেলথ চেকআপ হবে। সবাই আসতে পারেন।",
+    "type": "event",
+    "attachedCategory": "doctor",
+    "division": "dhaka",
+    "district": "dhaka_city",
+    "upazila": "banani",
+    "area": "বনানী",
+    "authorName": "স্বেচ্ছাসেবক দল",
+    "upvotes": 31,
+    "replies": [
+      { "authorName": "নীলা", "content": "অনেক ধন্যবাদ সুন্দর এই উদ্যোগের জন্য।" }
+    ],
+    "createdAt": "2026-08-29T18:45:00.000Z"
+  },
+  {
+    "title": "উত্তরা সেক্টর ৭ মেইন রোডে ড্রেনেজ সংস্কার কাজ চলছে",
+    "content": "আগামী ৩ দিন সেক্টর ৭ ও ৯ এর সংযোগ সড়কে খোড়াখুঁড়ির কাজ চলবে। ভারী যানবাহন এড়িয়ে পাশের বাইপাস রোড দিয়ে যাতায়াত করতে অনুরোধ করা হচ্ছে।",
+    "type": "notice",
+    "attachedCategory": "other_utility",
+    "division": "dhaka",
+    "district": "dhaka_city",
+    "upazila": "uttara",
+    "area": "উত্তরা",
+    "authorName": "উত্তরা কল্যাণ সমিতি",
+    "upvotes": 28,
+    "replies": [],
+    "createdAt": "2026-08-30T08:00:00.000Z"
+  },
+  {
+    "title": "নড়াইলে চিত্রা নদীর তাজা মাছ ও সেরা মিষ্টি কোথায় পাব?",
+    "content": "ঢাকা থেকে নড়াইল বেড়াতে এসেছি। খাঁটি নড়াইল রসগোল্লা ও তাজা চিত্রা নদীর মাছ কিনতে কোন বাজারটা সবচেয়ে ভালো হবে?",
+    "type": "question",
+    "attachedCategory": "restaurant",
+    "division": "khulna",
+    "district": "narail",
+    "upazila": "narail_sadar",
+    "area": "নড়াইল সদর",
+    "authorName": "ইমরান খান",
+    "upvotes": 16,
+    "replies": [
+      { "authorName": "তানভীর আহমেদ", "content": "রূপগঞ্জ বাজারে সকাল ৭টায় যাবেন, তাজা মাছ পাবেন। আর মিষ্টির জন্য নড়াইল হোটেলের পেছনের দোকানগুলো বিখ্যাত।" }
+    ],
+    "createdAt": "2026-08-30T09:20:00.000Z"
+  }
+]

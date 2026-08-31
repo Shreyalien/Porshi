@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porshi (পড়শী) — আপনার পাশে, আপনার জন্য | Bangladesh Neighborhood Services Network</title>
+  <meta name="description" content="Bangladesh's neighborhood service directory & community platform. Connect directly with verified electricians, plumbers, AC technicians, local practitioners, and tutors." />
+  <meta name="author" content="Shreya (github.com/Shreyalien)" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP NAVBAR (GUEST DEFAULT, COMPACT, NO OVERFLOW)
+       ======================================================================== -->
+  <header class="web-header">
+    <div class="header-container">
+      
+      <!-- Brand Logo with Transparent Artwork Image -->
+      <div class="header-brand" id="brand-home-trigger" role="button" tabindex="0" title="Porshi (পড়শী)">
+        <img src="assets/porshi_logo_transparent.png" alt="Porshi (পড়শী)" class="porshi-brand-logo-img" />
+        <div class="brand-text-block">
+          <span class="app-tagline" id="tagline">আপনার পাশে, আপনার জন্য</span>
+        </div>
+      </div>
+
+      <!-- Center Desktop Navigation Tabs -->
+      <nav class="desktop-nav-links" id="desktop-nav-links">
+        <button class="d-nav-btn active" id="dnav-home" data-view="view-home">
+          <span class="material-symbols-outlined">home</span>
+          <span id="dnav-home-text">Home</span>
+        </button>
+        <button class="d-nav-btn" id="dnav-services" data-view="view-app-main">
+          <span class="material-symbols-outlined">grid_view</span>
+          <span id="dnav-services-text">Directory</span>
+        </button>
+        <button class="d-nav-btn" id="dnav-categories" data-view="view-categories">
+          <span class="material-symbols-outlined">category</span>
+          <span id="dnav-cats-text">A-Z Categories</span>
+        </button>
+        <button class="d-nav-btn" id="dnav-emergency" data-view="view-emergency">
+          <span class="material-symbols-outlined">emergency</span>
+          <span id="dnav-em-text">Emergency 24/7</span>
+        </button>
+        <button class="d-nav-btn" id="dnav-community" data-view="view-community-page">
+          <span class="material-symbols-outlined">forum</span>
+          <span id="dnav-community-text">Community Feed</span>
+        </button>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        
+        <!-- Location Pill -->
+        <button class="area-pill" id="area-pill" title="Change Location">
+          <span class="material-symbols-outlined pin-icon">near_me</span>
+          <span id="current-area-label">Dhanmondi, Dhaka</span>
+          <span class="material-symbols-outlined arrow-icon">expand_more</span>
+        </button>
+
+        <!-- Theme Toggle (Day / Night) -->
+        <button class="icon-btn theme-toggle-btn" id="theme-toggle" title="Toggle Light / Dark Theme">
+          <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+        </button>
+
+        <!-- Language Switcher (EN | বাং) -->
+        <div class="lang-toggle" id="lang-toggle-wrap">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="bn">বাং</button>
+        </div>
+
+        <!-- Notification Bell with Dropdown -->
+        <div class="notif-wrapper">
+          <button class="icon-btn notif-btn" id="notif-btn" title="Notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notif-dot hidden" id="notif-badge">0</span>
+          </button>
+
+          <!-- Notification Dropdown Drawer -->
+          <div class="notif-dropdown hidden" id="notif-dropdown">
+            <div class="notif-header">
+              <h4 id="notif-header-title">Notifications</h4>
+              <button class="btn-sm-text" id="notif-mark-all-read">Mark all as read</button>
+            </div>
+            <div class="notif-tabs">
+              <button class="notif-tab-btn active" data-filter="all" id="notif-tab-all">All</button>
+              <button class="notif-tab-btn" data-filter="booking" id="notif-tab-booking">Bookings</button>
+              <button class="notif-tab-btn" data-filter="community" id="notif-tab-community">Community</button>
+            </div>
+            <div class="notif-list" id="notif-list">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Guest Login / User Profile Chip (Default: Guest Mode Login Button) -->
+        <button class="btn btn-primary btn-header-login" id="nav-login-btn">
+          <span class="material-symbols-outlined">login</span>
+          <span id="nav-login-text">Log In</span>
+        </button>
+
+        <button class="account-pill-btn hidden" id="account-btn" title="View Profile">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=RakibHasan&mouth=smile&eyebrows=default&eyes=default&accessoriesProbability=0&backgroundColor=b6e3f4" alt="Avatar" class="avatar-img-sm" id="header-user-avatar" />
+          <span class="user-chip-name" id="user-chip-name">রাকিব হাসান</span>
+          <span class="verified-check-icon material-symbols-outlined" id="user-chip-verified">check_circle</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       1. GRAND HOMEPAGE VIEW (MATCHES 1ST & 3RD REFERENCE PICS ACCURATELY)
+       ======================================================================== -->
+  <section class="view-container active" id="view-home">
+    <div class="home-container">
+      
+      <!-- Split Hero Section -->
+      <div class="hero-split-card">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-split-left">
+          
+          <!-- Prominent Large Centerpiece Logo -->
+          <div class="hero-logo-banner-wrap">
+            <img src="assets/porshi_logo_transparent.png" alt="Porshi (পড়শী)" class="hero-brand-logo-img" />
+          </div>
+          
+          <!-- BANGLADESH'S COMMUNITY SERVICE NETWORK (Placed directly below Porshi logo) -->
+          <div class="hero-eyebrow-badge-wrap">
+            <span class="hero-eyebrow" id="hero-badge-tag">BANGLADESH'S COMMUNITY SERVICE NETWORK</span>
+          </div>
+          
+          <!-- Bengali Slogan -->
+          <h2 class="hero-slogan-hero" id="home-slogan-hero">আপনার পাশে, আপনার জন্য</h2>
+          
+          <p class="hero-split-desc" id="home-subtext">
+            Your trusted neighborhood directory for 40+ verified A-Z daily services, experienced technicians, tutors, and 24/7 emergency support across Bangladesh.
+          </p>
+          
+          <!-- Hero Search & Action Bar -->
+          <div class="hero-search-action-bar">
+            <div class="hero-search-input-wrap">
+              <span class="material-symbols-outlined search-icon">search</span>
+              <input type="text" id="home-search-input" placeholder="Search electrician, plumber, AC service, tutor..." />
+            </div>
+            <button class="btn btn-primary hero-action-btn-search" id="home-search-btn">
+              <span id="home-search-btn-text">Search</span>
+            </button>
+            <button class="btn btn-outline hero-action-btn-login" id="home-login-btn">
+              <span id="home-cta-login-text">Log In / Register</span>
+            </button>
+            <button class="btn btn-ghost hero-action-btn-guest" id="home-guest-btn">
+              <span id="home-cta-guest-text">Explore Guest</span>
+            </button>
+          </div>
+
+          <p class="hero-guest-note" id="home-guest-notice">
+            💡 Guest mode allows category and service browsing. Direct contact numbers are unlocked upon logging in
+          </p>
+        </div>
+
+        <!-- Right Hero Image Artwork Showcase -->
+        <div class="hero-split-right">
+          <img src="assets/porshi_community_hero.jpg" alt="Porshi Community Specialists Artwork" class="hero-community-img" id="hero-main-img" />
+          <div class="hero-artwork-glow"></div>
+        </div>
+
+      </div>
+
+      <!-- Real-Time Dynamic Stats Counter Row -->
+      <div class="stats-counter-banner">
+        <div class="stat-box">
+          <strong class="stat-number" id="stat-pros">42</strong>
+          <span class="stat-label" id="stat-pros-lbl">Registered Specialists</span>
+        </div>
+        <div class="stat-box">
+          <strong class="stat-number" id="stat-categories">40+</strong>
+          <span class="stat-label" id="stat-categories-lbl">Active Service Categories</span>
+        </div>
+        <div class="stat-box">
+          <strong class="stat-number" id="stat-districts">64</strong>
+          <span class="stat-label" id="stat-districts-lbl">Districts Across BD</span>
+        </div>
+        <div class="stat-box">
+          <strong class="stat-number" id="stat-community">100%</strong>
+          <span class="stat-label" id="stat-community-lbl">Direct & Free Connection</span>
+        </div>
+      </div>
+
+      <!-- 4 Quick Feature Pills Row -->
+      <div class="quick-feature-pills-row">
+        <div class="feat-pill-item">
+          <span class="material-symbols-outlined feat-pill-icon" style="color:#38bdf8;">verified</span>
+          <div>
+            <strong id="feat-pill-1-title">Verified</strong>
+            <p id="feat-pill-1-desc">Trusted specialists</p>
+          </div>
+        </div>
+        <div class="feat-pill-item">
+          <span class="material-symbols-outlined feat-pill-icon" style="color:#ef4444;">location_on</span>
+          <div>
+            <strong id="feat-pill-2-title">All Bangladesh</strong>
+            <p id="feat-pill-2-desc">Search beyond your area</p>
+          </div>
+        </div>
+        <div class="feat-pill-item">
+          <span class="material-symbols-outlined feat-pill-icon" style="color:#3b82f6;">calendar_month</span>
+          <div>
+            <strong id="feat-pill-3-title">Clear Booking</strong>
+            <p id="feat-pill-3-desc">Request → confirm → complete</p>
+          </div>
+        </div>
+        <div class="feat-pill-item">
+          <span class="material-symbols-outlined feat-pill-icon" style="color:#f59e0b;">bolt</span>
+          <div>
+            <strong id="feat-pill-4-title">24/7 Emergency</strong>
+            <p id="feat-pill-4-desc">Six essential hotlines</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Core Trust Pillars -->
+      <div class="home-pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon bg-blue"><span class="material-symbols-outlined">verified_user</span></div>
+          <h4 id="pillar1-title">🛡️ Verified Specialists</h4>
+          <p id="pillar1-desc">All service providers are verified with National ID and genuine customer reviews.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon bg-emerald"><span class="material-symbols-outlined">near_me</span></div>
+          <h4 id="pillar2-title">📍 Near Your Location</h4>
+          <p id="pillar2-desc">Quick doorstep service right in your neighborhood and locality.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon bg-amber"><span class="material-symbols-outlined">payments</span></div>
+          <h4 id="pillar3-title">৳ Transparent Pricing</h4>
+          <p id="pillar3-desc">Clear upfront service rates with no hidden commissions or extra charges.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon bg-rose"><span class="material-symbols-outlined">support_agent</span></div>
+          <h4 id="pillar4-title">🎧 24/7 Live Assistance</h4>
+          <p id="pillar4-desc">Emergency ambulances, gas cylinders & on-demand help anytime.</p>
+        </div>
+      </div>
+
+      <!-- Dual Visual Showcase Banners -->
+      <div class="home-gallery-showcase">
+        <div class="gallery-card">
+          <img src="assets/porshi_street_service.jpg" alt="Neighborhood Street Services" />
+          <div class="gallery-card-info">
+            <h4 id="showcase1-title">বিশ্বস্ত সেবা, নির্ভর প্রতিবেশী</h4>
+            <p id="showcase1-sub">Better Homes · Stronger Communities</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/porshi-hub.jpg" alt="Porshi Local Service Hub" />
+          <div class="gallery-card-info">
+            <h4 id="showcase2-title">পাশে আছি, সেবায় পাশে</h4>
+            <p id="showcase2-sub">"ভালো মানুষেরাই গড়ে তোলে ভালো এলাকা"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Step "How Porshi Works" Section -->
+      <div class="how-it-works-section">
+        <div class="section-title-center">
+          <h3 id="how-heading">How Porshi Works (4 Simple Steps)</h3>
+          <p class="section-sub" id="how-sub">Getting household tasks done has never been this easy & secure:</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-badge">1</span>
+            <div class="step-icon-wrap"><span class="material-symbols-outlined">search</span></div>
+            <h4 id="step1-title">1. Search Service</h4>
+            <p id="step1-desc">Select your needed service category or search by keyword.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">2</span>
+            <div class="step-icon-wrap"><span class="material-symbols-outlined">person_pin</span></div>
+            <h4 id="step2-title">2. Choose Specialist</h4>
+            <p id="step2-desc">Check ratings, distance, verified NID badge, and reviews.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">3</span>
+            <div class="step-icon-wrap"><span class="material-symbols-outlined">calendar_clock</span></div>
+            <h4 id="step3-title">3. Book / Contact</h4>
+            <p id="step3-desc">Schedule appointment or call/WhatsApp directly.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-badge">4</span>
+            <div class="step-icon-wrap"><span class="material-symbols-outlined">task_alt</span></div>
+            <h4 id="step4-title">4. Get Service Done</h4>
+            <p id="step4-desc">Specialist arrives at your doorstep to complete the job.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2. MAIN DASHBOARD / DIRECTORY VIEW (3-COLUMN WORKSPACE)
+       ======================================================================== -->
+  <main class="view-container" id="view-app-main">
+    <div class="dashboard-layout-grid">
+      
+      <!-- --------------------------------------------------------------------
+           LEFT COLUMN: FILTERS PANEL
+           -------------------------------------------------------------------- -->
+      <aside class="sidebar-filters-col" id="sidebar-filters">
+        <div class="filter-panel-card">
+          <div class="filter-panel-header">
+            <h3><span class="material-symbols-outlined">tune</span> <span id="lbl-filters-title">Filters</span></h3>
+            <button class="reset-link-btn" id="filter-reset-link">Reset</button>
+          </div>
+
+          <!-- Category Group Filter -->
+          <div class="filter-group">
+            <label class="filter-group-title" id="lbl-filter-cat">Category Group</label>
+            <div class="sidebar-category-list">
+              <button class="sidebar-cat-item active" data-cat="all">
+                <span class="material-symbols-outlined">apps</span>
+                <span id="fc-all">All Categories</span>
+              </button>
+              <button class="sidebar-cat-item" data-cat="home_services">
+                <span class="material-symbols-outlined">home_repair_service</span>
+                <span id="fc-home">Home Services</span>
+              </button>
+              <button class="sidebar-cat-item" data-cat="repairs">
+                <span class="material-symbols-outlined">build</span>
+                <span id="fc-repairs">Repairs & Tech</span>
+              </button>
+              <button class="sidebar-cat-item" data-cat="health">
+                <span class="material-symbols-outlined">medical_services</span>
+                <span id="fc-health">Health & Care</span>
+              </button>
+              <button class="sidebar-cat-item" data-cat="education">
+                <span class="material-symbols-outlined">school</span>
+                <span id="fc-edu">Education & Learning</span>
+              </button>
+              <button class="sidebar-cat-item" data-cat="transportation">
+                <span class="material-symbols-outlined">directions_car</span>
+                <span id="fc-transport">Transportation</span>
+              </button>
+              <button class="sidebar-cat-item" data-cat="events">
+                <span class="material-symbols-outlined">celebration</span>
+                <span id="fc-events">Lifestyle & Events</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Verification Type Filter -->
+          <div class="filter-group">
+            <label class="filter-group-title">Specialist Verification</label>
+            <div class="chk-group-list">
+              <label class="custom-chk-row">
+                <input type="checkbox" id="chk-pro-verified" checked />
+                <span>🛡️ NID Verified Pros</span>
+              </label>
+              <label class="custom-chk-row">
+                <input type="checkbox" id="chk-comm-added" checked />
+                <span>👥 Community Recommended</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Location Radius Slider -->
+          <div class="filter-group">
+            <div class="filter-flex-header">
+              <label class="filter-group-title" id="lbl-filter-radius">Location Radius</label>
+              <span class="slider-val-badge" id="radius-val">25 km</span>
+            </div>
+            <input type="range" min="1" max="25" value="25" class="custom-range-slider" id="radius-slider" />
+            <div class="slider-ticks">
+              <span>1 km</span>
+              <span>10 km</span>
+              <span>25 km</span>
+            </div>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="filter-group">
+            <label class="filter-group-title" id="lbl-filter-avail">Availability</label>
+            <div class="chk-group-list">
+              <label class="custom-chk-row">
+                <input type="checkbox" id="chk-avail-now" />
+                <span id="lbl-avail-now"><span class="status-dot-green"></span> Available Now 🟢</span>
+              </label>
+              <label class="custom-chk-row">
+                <input type="checkbox" id="chk-avail-today" />
+                <span id="lbl-avail-today">Today</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="filter-group">
+            <label class="filter-group-title" id="lbl-filter-ratings">Ratings</label>
+            <div class="rating-pills-row">
+              <button class="rating-filter-chip" data-rating="4">★ 4.0 & above</button>
+              <button class="rating-filter-chip" data-rating="3">★ 3.0 & above</button>
+            </div>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="filter-group">
+            <label class="filter-group-title" id="lbl-filter-price">Price Range</label>
+            <div class="price-inputs-row">
+              <input type="number" id="price-min" placeholder="Min (৳)" class="price-input" />
+              <span>-</span>
+              <input type="number" id="price-max" placeholder="Max (৳)" class="price-input" />
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- --------------------------------------------------------------------
+           CENTER COLUMN: MAIN WORKSPACE & SERVICES GRID
+           -------------------------------------------------------------------- -->
+      <section class="main-dashboard-content">
+        
+        <!-- Creative Modern Gradient Aurora Banner (No Photo BG, Crisp in Day/Night) -->
+        <div class="dashboard-hero-banner creative-mesh-banner">
+          <div class="dash-hero-text">
+            <div class="dash-title-action-row">
+              <div>
+                <h2 class="dash-hero-title" id="dash-hero-title">Find Trusted Services <span class="gradient-signature-text">Near You</span></h2>
+                <p class="dash-hero-sub" id="dash-hero-sub">40+ verified categories · Connect directly with local specialists across Bangladesh.</p>
+              </div>
+              <!-- Add Service Button in Workspace Header -->
+              <button class="btn btn-primary btn-add-in-dash" id="dash-add-btn">
+                <span class="material-symbols-outlined">add_circle</span>
+                <span>+ Add Service</span>
+              </button>
+            </div>
+            
+            <!-- Embedded Search Box -->
+            <div class="dash-search-bar-wrap">
+              <div class="dash-search-input-box">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" id="main-search-input" placeholder="Search services (e.g., electrician, plumber, AC, doctor, tutor)..." />
+              </div>
+              <button class="dash-loc-btn" id="dash-loc-selector-btn">
+                <span class="material-symbols-outlined pin-icon">location_on</span>
+                <span id="dash-loc-text">Dhanmondi, Dhaka</span>
+                <span class="material-symbols-outlined arrow">expand_more</span>
+              </button>
+              <button class="btn btn-primary dash-search-btn" id="hero-search-btn">
+                <span class="material-symbols-outlined">search</span>
+                <span id="hero-search-btn-text">Search</span>
+              </button>
+            </div>
+
+            <!-- Popular Search Tags -->
+            <div class="dash-popular-searches">
+              <span class="pop-label" id="pop-searches-lbl">Popular:</span>
+              <button class="pop-chip" data-cat="electrician">⚡ Electrician</button>
+              <button class="pop-chip" data-cat="plumber">🔧 Plumber</button>
+              <button class="pop-chip" data-cat="ac_service">❄️ AC Service</button>
+              <button class="pop-chip" data-cat="doctor">🩺 Local Doctor</button>
+              <button class="pop-chip" data-cat="tutor">📚 Tutor</button>
+              <button class="pop-chip" data-cat="cleaning">🧹 Cleaning</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Category Bar Row (Top 6 Cards with Real Dynamic Counts) -->
+        <div class="quick-category-cards-row">
+          <div class="q-cat-card" data-cat="electrician">
+            <div class="q-icon bg-amber-soft"><span class="material-symbols-outlined">bolt</span></div>
+            <div class="q-info">
+              <h4 id="qc-elec">Electrician</h4>
+              <p id="qc-elec-count">Specialists</p>
+            </div>
+          </div>
+          <div class="q-cat-card" data-cat="plumber">
+            <div class="q-icon bg-teal-soft"><span class="material-symbols-outlined">plumbing</span></div>
+            <div class="q-info">
+              <h4 id="qc-plumb">Plumber</h4>
+              <p id="qc-plumb-count">Specialists</p>
+            </div>
+          </div>
+          <div class="q-cat-card" data-cat="ac_service">
+            <div class="q-icon bg-blue-soft"><span class="material-symbols-outlined">ac_unit</span></div>
+            <div class="q-info">
+              <h4 id="qc-ac">AC Service</h4>
+              <p id="qc-ac-count">Specialists</p>
+            </div>
+          </div>
+          <div class="q-cat-card" data-cat="tutor">
+            <div class="q-icon bg-purple-soft"><span class="material-symbols-outlined">school</span></div>
+            <div class="q-info">
+              <h4 id="qc-tutor">Tutor</h4>
+              <p id="qc-tutor-count">Teachers</p>
+            </div>
+          </div>
+          <div class="q-cat-card" data-cat="cleaning">
+            <div class="q-icon bg-emerald-soft"><span class="material-symbols-outlined">cleaning_services</span></div>
+            <div class="q-info">
+              <h4 id="qc-clean">Home Cleaning</h4>
+              <p id="qc-clean-count">Cleaners</p>
+            </div>
+          </div>
+          <div class="q-cat-card q-cat-more" id="see-all-cats-btn">
+            <div class="q-icon bg-rose-soft"><span class="material-symbols-outlined">category</span></div>
+            <div class="q-info">
+              <h4 id="qc-all">40+ Categories</h4>
+              <p id="qc-all-sub">Explore All</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Summary & Sorting Header -->
+        <div class="dash-results-header">
+          <div class="results-count-title">
+            <p><span id="results-count-num">Showing results</span> <span id="lbl-in-area">in</span> <strong id="summary-area-name">All Bangladesh</strong></p>
+          </div>
+          <div class="results-sort-box">
+            <label for="dash-sort-select" id="lbl-sort-by">Sort by:</label>
+            <select id="dash-sort-select" class="dash-sort-select">
+              <option value="rating">Recommended / Highest Rated ★</option>
+              <option value="upvotes">Most Upvoted / Trusted</option>
+              <option value="price_low">Price: Low to High</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Worker Cards Grid -->
+        <div class="worker-cards-grid" id="listings">
+          <!-- Dynamically populated with real worker cards -->
+        </div>
+
+        <!-- Load More Services Button -->
+        <div class="load-more-wrap">
+          <button class="btn btn-outline load-more-btn" id="load-more-btn">
+            <span class="material-symbols-outlined">expand_more</span>
+            <span id="load-more-text">Load More Services</span>
+          </button>
+        </div>
+
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           RIGHT COLUMN: REALISTIC RADAR SERVICE MAP, TOP RATED & PROMOTIONS
+           -------------------------------------------------------------------- -->
+      <aside class="sidebar-extras-col">
+        
+        <!-- Radar Service Map Card -->
+        <div class="sidebar-card service-map-card">
+          <div class="sidebar-card-header">
+            <h4><span class="material-symbols-outlined">map</span> <span id="lbl-map-title">Service Map</span></h4>
+            <button class="sidebar-link-btn" id="map-expand-btn">Expand</button>
+          </div>
+          <div class="radar-map-box" id="radar-map-interactive">
+            <div class="radar-street-grid"></div>
+            <div class="radar-circle-outer"></div>
+            <div class="radar-circle-mid"></div>
+            <div class="radar-circle-inner"></div>
+            <div class="radar-center-pin" title="Your Location: Dhanmondi">
+              <span class="material-symbols-outlined">my_location</span>
+            </div>
+            <!-- Specialist Interactive Pins with Tooltips -->
+            <div class="map-pin pin-1 bg-amber" data-id="l1" title="Rahim Electric (1.2 km)"><span class="material-symbols-outlined">bolt</span></div>
+            <div class="map-pin pin-2 bg-teal" data-id="l2" title="Ayon Plumber (1.5 km)"><span class="material-symbols-outlined">plumbing</span></div>
+            <div class="map-pin pin-3 bg-blue" data-id="l3" title="CoolTech AC (1.8 km)"><span class="material-symbols-outlined">ac_unit</span></div>
+            <div class="map-pin pin-4 bg-emerald" data-id="l5" title="Maya Cleaning (1.4 km)"><span class="material-symbols-outlined">cleaning_services</span></div>
+            <div class="map-pin pin-5 bg-purple" data-id="l6" title="Dr. Moksedul (2.0 km)"><span class="material-symbols-outlined">medical_services</span></div>
+            <!-- Radar Controls -->
+            <div class="radar-controls">
+              <button class="radar-btn" id="radar-zoom-in" title="Zoom In"><span>+</span></button>
+              <button class="radar-btn" id="radar-zoom-out" title="Zoom Out"><span>-</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Rated Near You -->
+        <div class="sidebar-card top-rated-card">
+          <div class="sidebar-card-header">
+            <h4><span class="material-symbols-outlined" style="color:#fbbf24;">star</span> <span id="lbl-top-rated-title">Top Rated Near You</span></h4>
+            <button class="sidebar-link-btn" id="view-all-top-rated">View All</button>
+          </div>
+          <div class="top-rated-list" id="top-rated-container">
+            <!-- Dynamic Top Rated Specialists -->
+          </div>
+        </div>
+
+        <!-- Become a Service Provider Card -->
+        <div class="sidebar-card become-provider-card">
+          <div class="provider-banner-content">
+            <h4 id="lbl-become-prov-title">Become a Service Provider</h4>
+            <p id="lbl-become-prov-sub">Join verified specialists and grow your local service business.</p>
+            <button class="btn btn-primary btn-join-provider" id="join-provider-btn">
+              <span class="material-symbols-outlined">handshake</span>
+              <span id="lbl-join-now-btn">Join Now</span>
+            </button>
+          </div>
+          <img src="https://api.dicebear.com/7.x/lorelei/svg?seed=ProProvider&backgroundColor=c0aede" alt="Join Pro" class="provider-img" />
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       3. DEDICATED 40+ A-Z CATEGORIES PAGE VIEW
+       ======================================================================== -->
+  <section class="view-container" id="view-categories">
+    <div class="page-full-container">
+      
+      <div class="page-header-row">
+        <div>
+          <h2 class="page-main-heading" id="explore-categories-heading">Explore 40+ A-Z Categories</h2>
+          <p class="page-sub-heading" id="explore-categories-sub">Browse everyday household, repair, and emergency specialists across Bangladesh</p>
+        </div>
+        <div class="category-search-bar">
+          <span class="material-symbols-outlined">search</span>
+          <input type="text" id="cat-page-search" placeholder="Search category by name..." />
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="cat-filter-tabs-row" id="cat-group-tabs">
+        <button class="cat-tab-btn active" data-group="all">All (40+)</button>
+        <button class="cat-tab-btn" data-group="home_services">Home Services</button>
+        <button class="cat-tab-btn" data-group="repairs">Repairs & Tech</button>
+        <button class="cat-tab-btn" data-group="health">Health & Care</button>
+        <button class="cat-tab-btn" data-group="education">Education</button>
+        <button class="cat-tab-btn" data-group="transportation">Transport & Auto</button>
+        <button class="cat-tab-btn" data-group="events">Lifestyle & Events</button>
+      </div>
+
+      <!-- 40+ Dynamic Categories Grid -->
+      <div class="categories-grid-container" id="categories-grid">
+        <!-- Rendered by JavaScript with Real Counts -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. DEDICATED 24/7 EMERGENCY ASSISTANCE HUB VIEW
+       ======================================================================== -->
+  <section class="view-container" id="view-emergency">
+    <div class="page-full-container">
+      
+      <div class="page-header-row">
+        <div>
+          <h2 class="page-main-heading" id="emergency-heading">⚡ Instant & Emergency Assistance (24/7)</h2>
+          <p class="page-sub-heading" id="emergency-sub">Direct verified contacts and rapid emergency services across Bangladesh</p>
+        </div>
+        <div class="pulsing-live-badge">
+          <span class="pulse-dot"></span>
+          <span id="em-live-badge-text">24/7 Live</span>
+        </div>
+      </div>
+
+      <!-- 6 Emergency Service Action Cards Grid -->
+      <div class="emergency-cards-grid">
+        <div class="em-card" data-category="ambulance">
+          <div class="em-icon bg-rose"><span class="material-symbols-outlined">emergency</span></div>
+          <div class="em-details">
+            <h4 id="em-c1-title">Emergency Ambulance</h4>
+            <p id="em-c1-sub">ICU & Oxygen Support</p>
+          </div>
+          <span class="material-symbols-outlined em-arrow">arrow_forward</span>
+        </div>
+        <div class="em-card" data-category="pharmacy">
+          <div class="em-icon bg-emerald"><span class="material-symbols-outlined">local_pharmacy</span></div>
+          <div class="em-details">
+            <h4 id="em-c2-title">24/7 Pharmacy</h4>
+            <p id="em-c2-sub">Urgent Medicines & Delivery</p>
+          </div>
+          <span class="material-symbols-outlined em-arrow">arrow_forward</span>
+        </div>
+        <div class="em-card" data-category="gas_delivery">
+          <div class="em-icon bg-amber"><span class="material-symbols-outlined">propane_tank</span></div>
+          <div class="em-details">
+            <h4 id="em-c3-title">LPG Gas Cylinder</h4>
+            <p id="em-c3-sub">Delivery in 15-20 mins</p>
+          </div>
+          <span class="material-symbols-outlined em-arrow">arrow_forward</span>
+        </div>
+        <div class="em-card" data-category="electrician">
+          <div class="em-icon bg-blue"><span class="material-symbols-outlined">bolt</span></div>
+          <div class="em-details">
+            <h4 id="em-c4-title">Emergency Electrician</h4>
+            <p id="em-c4-sub">Short Circuit & DB Board Fix</p>
+          </div>
+          <span class="material-symbols-outlined em-arrow">arrow_forward</span>
+        </div>
+        <div class="em-card" data-category="plumber">
+          <div class="em-icon bg-teal"><span class="material-symbols-outlined">plumbing</span></div>
+          <div class="em-details">
+            <h4 id="em-c5-title">Plumber & Water Lines</h4>
+            <p id="em-c5-sub">Leakage & Motor Fix</p>
+          </div>
+          <span class="material-symbols-outlined em-arrow">arrow_forward</span>
+        </div>
+        <div class="em-card" data-category="doctor">
+          <div class="em-icon bg-purple"><span class="material-symbols-outlined">medical_services</span></div>
+          <div class="em-details">
+            <h4 id="em-c6-title">Local Health Doctor</h4>
+            <p id="em-c6-sub">Palli Chikitshok & First Aid</p>
+          </div>
+          <span class="material-symbols-outlined em-arrow">arrow_forward</span>
+        </div>
+      </div>
+
+      <!-- National Toll-Free Hotlines Section -->
+      <div class="national-hotlines-box">
+        <h3 id="national-hotlines-heading"><span class="material-symbols-outlined">call</span> National Emergency Hotlines (Toll-Free)</h3>
+        <div class="hotlines-grid">
+          <div class="hotline-card">
+            <span class="hotline-number">999</span>
+            <div class="hotline-info">
+              <strong>National Emergency Services</strong>
+              <p>Police · Fire Service · Ambulance</p>
+            </div>
+            <a href="tel:999" class="btn-hotline-call"><span class="material-symbols-outlined">call</span> Call 999</a>
+          </div>
+          <div class="hotline-card">
+            <span class="hotline-number">333</span>
+            <div class="hotline-info">
+              <strong>National Citizen Helpdesk</strong>
+              <p>Government Info · Relief Assistance</p>
+            </div>
+            <a href="tel:333" class="btn-hotline-call"><span class="material-symbols-outlined">call</span> Call 333</a>
+          </div>
+          <div class="hotline-card">
+            <span class="hotline-number">109</span>
+            <div class="hotline-info">
+              <strong>Women & Child Helpline</strong>
+              <p>24/7 Support & Protection</p>
+            </div>
+            <a href="tel:109" class="btn-hotline-call"><span class="material-symbols-outlined">call</span> Call 109</a>
+          </div>
+          <div class="hotline-card">
+            <span class="hotline-number">16263</span>
+            <div class="hotline-info">
+              <strong>Shastho Batayan (Health)</strong>
+              <p>Doctor Consultation & Health Hotline</p>
+            </div>
+            <a href="tel:16263" class="btn-hotline-call"><span class="material-symbols-outlined">call</span> Call 16263</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. DEDICATED COMMUNITY / DISCUSSION BOARD VIEW (MY AREA vs ALL BD)
+       ======================================================================== -->
+  <section class="view-container" id="view-community-page">
+    <div class="community-page-container">
+      
+      <div class="page-header-row">
+        <div>
+          <h2 class="page-main-heading" id="community-heading">💬 Neighborhood Community Discussions</h2>
+          <p class="page-sub-heading" id="community-sub">Ask questions, share recommendations, and discuss local neighborhood needs</p>
+        </div>
+        <button class="btn btn-primary btn-new-post" id="open-new-post-btn">
+          <span class="material-symbols-outlined">add_comment</span>
+          <span id="lbl-ask-question-btn">+ Ask Question / Start Discussion</span>
+        </button>
+      </div>
+
+      <!-- Scope Selector Tabs: My Area vs All Bangladesh -->
+      <div class="community-scope-tabs">
+        <button class="comm-scope-btn active" id="cscope-my-area" data-scope="my_area">
+          <span class="material-symbols-outlined">near_me</span>
+          <span id="lbl-scope-area">📍 My Area (Dhanmondi, Dhaka)</span>
+        </button>
+        <button class="comm-scope-btn" id="cscope-all-bd" data-scope="all_bd">
+          <span class="material-symbols-outlined">public</span>
+          <span id="lbl-scope-all">🇧🇩 All Bangladesh</span>
+        </button>
+      </div>
+
+      <!-- Discussion Filter Tags -->
+      <div class="community-filters-row">
+        <button class="comm-filter-pill active" data-filter="all" id="cf-all">All Discussions</button>
+        <button class="comm-filter-pill" data-filter="help" id="cf-help">Help Needed</button>
+        <button class="comm-filter-pill" data-filter="recommendation" id="cf-recs">Recommendations</button>
+        <button class="comm-filter-pill" data-filter="security" id="cf-sec">Neighborhood Safety</button>
+        <button class="comm-filter-pill" data-filter="event" id="cf-event">Local Events</button>
+      </div>
+
+      <!-- Discussion Feed List -->
+      <div class="community-posts-list" id="community-posts-feed">
+        <!-- Dynamically rendered community discussion posts with replies & upvotes -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. DEDICATED PROFILE & DASHBOARD PAGE VIEW
+       ======================================================================== -->
+  <section class="view-container" id="view-profile-page">
+    <div class="profile-page-container">
+      
+      <div class="page-header-row">
+        <div>
+          <h2 class="page-main-heading" id="prof-heading">User Profile & Settings</h2>
+          <p class="page-sub-heading" id="prof-sub">Manage your appointments, personal details, and services</p>
+        </div>
+      </div>
+
+      <!-- Profile Mode Switcher Tabs (Only shown if user has a verified Pro service) -->
+      <div class="profile-mode-tabs hidden" id="profile-mode-tabs-container">
+        <button class="prof-tab active" id="prof-tab-citizen">
+          <span class="material-symbols-outlined">person</span>
+          <span id="ptab-citizen-text">Citizen Profile</span>
+        </button>
+        <button class="prof-tab" id="prof-tab-pro">
+          <span class="material-symbols-outlined">engineering</span>
+          <span id="ptab-pro-text">Service Pro Dashboard</span>
+        </button>
+      </div>
+
+      <!-- 1. Pure Citizen View (Single clean dashboard for regular users) -->
+      <div id="prof-view-citizen" class="profile-view-content">
+        <div class="profile-hero-card">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=RakibHasan&mouth=smile&eyebrows=default&eyes=default&accessoriesProbability=0&backgroundColor=b6e3f4" alt="Avatar" class="profile-avatar-img" id="prof-cit-avatar" />
+          <div class="profile-hero-info">
+            <h3 id="prof-cit-name">রাকিব হাসান</h3>
+            <p id="prof-cit-phone">Mobile: 01700-000000 · Citizen / Consumer</p>
+            <span class="profile-area-badge" id="prof-cit-area">Area: Dhanmondi, Dhaka</span>
+          </div>
+        </div>
+
+        <div class="profile-stats-grid">
+          <div class="pstat-card">
+            <strong class="pstat-val" id="prof-stat-points">240</strong>
+            <span class="pstat-lbl" id="prof-lbl-points">Citizen Points</span>
+          </div>
+          <div class="pstat-card">
+            <strong class="pstat-val" id="prof-stat-recs">6</strong>
+            <span class="pstat-lbl" id="prof-lbl-recs">Recommended</span>
+          </div>
+          <div class="pstat-card">
+            <strong class="pstat-val" id="prof-stat-inq">9</strong>
+            <span class="pstat-lbl" id="prof-lbl-inq">Questions Asked</span>
+          </div>
+        </div>
+
+        <!-- Booked Services & Rate Worker Section -->
+        <h4 class="section-sub-title" id="prof-bookings-heading"><span class="material-symbols-outlined">history</span> My Booked Services & Worker Reviews</h4>
+        <div class="profile-history-list" id="prof-bookings-list">
+          <!-- Rendered by JavaScript with Direct Rate / Review Button -->
+        </div>
+      </div>
+
+      <!-- 2. Pro Specialist View (For service providers) -->
+      <div id="prof-view-pro" class="profile-view-content hidden">
+        <div class="profile-hero-card">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=RahimElectrician&mouth=smile&eyebrows=default&eyes=default&accessoriesProbability=0&backgroundColor=ffd5dc" alt="Worker" class="profile-avatar-img pro-avatar-border" />
+          <div class="profile-hero-info">
+            <h3 id="prof-pro-name">Rahim Electric Service (Md. Rahim)</h3>
+            <p id="prof-pro-phone">Mobile: 01712-458823 · Service Specialist</p>
+            <span class="pro-nid-badge">NID: <strong id="prof-pro-nid-val">1994********34 (Verified)</strong></span>
+          </div>
+        </div>
+
+        <div class="profile-stats-grid">
+          <div class="pstat-card">
+            <strong class="pstat-val" style="color:#fbbf24;">4.9 ★</strong>
+            <span class="pstat-lbl" id="prof-lbl-rating">Average Rating</span>
+          </div>
+          <div class="pstat-card">
+            <strong class="pstat-val">1.2K+</strong>
+            <span class="pstat-lbl" id="prof-lbl-jobs">Completed Jobs</span>
+          </div>
+          <div class="pstat-card">
+            <strong class="pstat-val">8+ Years</strong>
+            <span class="pstat-lbl" id="prof-lbl-exp">Experience</span>
+          </div>
+        </div>
+
+        <h4 class="section-sub-title" id="prof-pro-jobs-heading"><span class="material-symbols-outlined">assignment</span> Client Bookings & Job Orders</h4>
+        <div class="profile-history-list" id="prof-pro-jobs-list">
+          <!-- Rendered by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Comprehensive Minimal About Porshi Section -->
+      <div class="profile-about-porshi-card">
+        <h4><span class="material-symbols-outlined">info</span> About Porshi (পড়শী)</h4>
+        <p>
+          <strong>Porshi (পড়শী)</strong> is Bangladesh's dedicated neighborhood directory and mutual-aid network. It empowers citizens to discover verified doorstep technicians, tutors, health practitioners, and emergency hotlines without intermediaries or hidden broker fees. Built on trust, National ID verification, and authentic local recommendations, Porshi connects neighbors to build stronger, self-reliant communities.
+        </p>
+        <button class="btn btn-outline btn-block" id="prof-logout-btn" style="margin-top: 14px;">
+          <span class="material-symbols-outlined">logout</span>
+          <span id="prof-logout-text">Log Out</span>
+        </button>
+      </div>
+
+      <!-- Quick Demo Switcher -->
+      <div class="demo-profile-switcher-box">
+        <label id="demo-switcher-label">⚡ Quick Switch Demo Account:</label>
+        <div class="demo-btns-row">
+          <button class="chip-btn active" id="demo-citizen-btn"><span id="demo-cit-text">Rakib Hasan (Citizen / Customer)</span></button>
+          <button class="chip-btn" id="demo-pro-btn"><span id="demo-pro-text">Md. Rahim (Service Pro / Electrician)</span></button>
+          <button class="chip-btn" id="demo-guest-btn"><span id="demo-guest-text">Guest Mode (Browse Only)</span></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MODALS & POPUPS
+       ======================================================================== -->
+  <div id="overlay" class="hidden"></div>
+
+  <!-- 1. WORKER DETAILS & CONTACT MODAL -->
+  <div class="modal-sheet hidden" id="listing-modal">
+    <button class="sheet-close-btn" data-close="listing-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="listing-modal-worker-header">
+      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=RahimElectrician&mouth=smile&eyebrows=default&eyes=default&accessoriesProbability=0&backgroundColor=ffd5dc" alt="Worker Avatar" class="modal-worker-avatar" id="l-worker-avatar" />
+      <div class="modal-worker-info">
+        <div style="display:flex; gap:6px; align-items:center; margin-bottom:4px;">
+          <span class="cat-pill-badge" id="l-badge">Electrician</span>
+          <span id="l-verif-badge" class="verified-nid-badge">NID Verified</span>
+        </div>
+        <h2 class="listing-detail-title" id="l-name">Rahim Electric Service</h2>
+        <p class="worker-real-name-row" id="l-real-name">Specialist: <strong>Md. Rahim Hossain</strong></p>
+        <p class="listing-meta" id="l-meta">Dhanmondi, Dhaka · 8+ Years Exp. · 1.2K+ Jobs</p>
+      </div>
+    </div>
+
+    <div class="contact-action-card">
+      <div class="phone-display-row">
+        <span class="material-symbols-outlined phone-icon">call</span>
+        <div>
+          <span class="phone-label">Direct Mobile Number:</span>
+          <span class="phone-number" id="l-phone-number">01712-458823</span>
+        </div>
+      </div>
+      <div class="action-btn-row">
+        <a href="#" class="btn-call" id="l-call-btn"><span class="material-symbols-outlined" id="l-call-icon">call</span> <span id="l-call-text">Call Direct</span></a>
+        <a href="#" class="btn-whatsapp" id="l-whatsapp-btn" target="_blank"><span class="material-symbols-outlined" id="l-wa-icon">chat</span> <span id="l-wa-text">WhatsApp</span></a>
+        <button class="btn-book" id="l-book-btn"><span class="material-symbols-outlined" id="l-book-icon">calendar_month</span> <span id="l-book-text">Book Service</span></button>
+        <button class="btn-copy" id="l-copy-btn" title="Copy Number"><span class="material-symbols-outlined">content_copy</span></button>
+      </div>
+    </div>
+
+    <div class="details-section-box">
+      <h4 class="details-subtitle" id="lbl-l-desc">Service Details & Experience:</h4>
+      <p class="listing-full-desc" id="l-description">Detailed description...</p>
+      <p class="listing-address-row">📍 <strong>Address:</strong> <span id="l-address">Road 4/A, Dhanmondi, Dhaka</span></p>
+      <div class="listing-price-estimate-row">
+        <span>Starting Price:</span>
+        <strong id="l-price">৳300 থেকে</strong>
+      </div>
+    </div>
+
+    <div class="trust-action-row">
+      <button class="btn-trust" id="l-upvote"><span class="material-symbols-outlined">thumb_up</span> <span id="l-upvote-text">Upvote Trust · 56</span></button>
+      <button class="btn-review" id="l-review-btn"><span class="material-symbols-outlined">rate_review</span> <span id="l-review-text">Write Review</span></button>
+    </div>
+
+    <hr class="divider" />
+    <h4 class="details-subtitle" id="lbl-l-reviews">Customer Reviews & Feedback</h4>
+    <div class="reviews-container" id="l-reviews">
+      <!-- Reviews populated dynamically -->
+    </div>
+  </div>
+
+  <!-- 2. SERVICE APPOINTMENT BOOKING MODAL -->
+  <div class="modal-sheet hidden" id="booking-modal">
+    <button class="sheet-close-btn" data-close="booking-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header">
+      <span class="material-symbols-outlined sheet-icon">calendar_month</span>
+      <h2 id="bm-heading">Book Service Appointment</h2>
+    </div>
+
+    <div class="booking-service-preview-card">
+      <div class="b-prev-icon"><span class="material-symbols-outlined">build</span></div>
+      <div class="b-prev-info">
+        <h4 id="bm-service-name">Rahim Electric Service</h4>
+        <p id="bm-provider-name">Specialist: Md. Rahim Hossain</p>
+        <span class="badge-price" id="bm-price-estimate">Starting from: ৳300</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label id="bm-lbl-date">Preferred Service Date:</label>
+      <input type="date" id="bm-date" class="clay-input" />
+    </div>
+
+    <div class="form-row">
+      <label id="bm-lbl-time">Preferred Time Slot:</label>
+      <select id="bm-time" class="clay-input">
+        <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+        <option value="afternoon" selected>Afternoon (1:00 PM - 5:00 PM)</option>
+        <option value="evening">Evening (6:00 PM - 9:00 PM)</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label id="bm-lbl-addr">Your Service Address / Location:</label>
+      <input type="text" id="bm-address" class="clay-input" placeholder="e.g. House 14, Road 27, Dhanmondi" />
+    </div>
+
+    <div class="form-row">
+      <label id="bm-lbl-notes">Describe Problem / Work Details:</label>
+      <textarea id="bm-notes" class="clay-input" rows="3" placeholder="e.g. Short circuit in DB board and fan regulator fix..."></textarea>
+    </div>
+
+    <p class="error-msg" id="bm-error"></p>
+    <button class="btn btn-primary btn-block" id="bm-confirm-btn">
+      <span class="material-symbols-outlined">check_circle</span>
+      <span id="bm-confirm-text">Confirm & Schedule Booking</span>
+    </button>
+  </div>
+
+  <!-- 3. CREATE NEW COMMUNITY DISCUSSION POST MODAL -->
+  <div class="modal-sheet hidden" id="new-post-modal">
+    <button class="sheet-close-btn" data-close="new-post-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header">
+      <span class="material-symbols-outlined sheet-icon">add_comment</span>
+      <h2 id="npm-heading">Create Community Discussion</h2>
+    </div>
+
+    <div class="form-row">
+      <label id="npm-lbl-cat">Discussion Type / Category:</label>
+      <select id="npm-category" class="clay-input">
+        <option value="help">Help Needed (জরুরি সাহায্য)</option>
+        <option value="recommendation" selected>Recommendation (পরামর্শ / কারিগরের খোঁজ)</option>
+        <option value="security">Neighborhood Safety (নিরাপত্তা)</option>
+        <option value="event">Local Event (এলাকার ইভেন্ট)</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label id="npm-lbl-title">Title / Summary:</label>
+      <input type="text" id="npm-title" class="clay-input" placeholder="e.g., Need a reliable plumber in Dhanmondi..." />
+    </div>
+
+    <div class="form-row">
+      <label id="npm-lbl-area">Neighborhood / Area:</label>
+      <input type="text" id="npm-area" class="clay-input" value="Dhanmondi, Dhaka" />
+    </div>
+
+    <div class="form-row">
+      <label id="npm-lbl-desc">Details & Context:</label>
+      <textarea id="npm-description" class="clay-input" rows="4" placeholder="Describe what you are looking for or discussing..."></textarea>
+    </div>
+
+    <p class="error-msg" id="npm-error"></p>
+    <button class="btn btn-primary btn-block" id="npm-submit">
+      <span class="material-symbols-outlined">publish</span>
+      <span id="npm-submit-text">Publish Discussion</span>
+    </button>
+  </div>
+
+  <!-- 4. LOCATION SELECTOR CASCADE MODAL -->
+  <div class="modal-sheet hidden" id="area-modal">
+    <button class="sheet-close-btn" data-close="area-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header">
+      <span class="material-symbols-outlined sheet-icon">location_city</span>
+      <h2 id="am-heading">Change Location / Area</h2>
+    </div>
+    <p class="modal-subtitle" id="am-sub">Select administrative locations to filter neighborhood services:</p>
+
+    <div class="form-row">
+      <label id="lbl-am-div">Division:</label>
+      <select id="am-division" class="clay-input"></select>
+    </div>
+    <div class="cascade-grid">
+      <div class="form-row">
+        <label id="lbl-am-dist">District:</label>
+        <select id="am-district" class="clay-input"></select>
+      </div>
+      <div class="form-row">
+        <label id="lbl-am-upaz">Upazila / Thana:</label>
+        <select id="am-upazila" class="clay-input"></select>
+      </div>
+    </div>
+
+    <div class="quick-areas-box">
+      <label id="lbl-am-pop">Popular Neighborhoods:</label>
+      <div class="quick-areas-chips">
+        <button class="chip-btn" data-val="Dhanmondi, Dhaka">Dhanmondi</button>
+        <button class="chip-btn" data-val="Mirpur, Dhaka">Mirpur</button>
+        <button class="chip-btn" data-val="Uttara, Dhaka">Uttara</button>
+        <button class="chip-btn" data-val="Gulshan, Dhaka">Gulshan</button>
+        <button class="chip-btn" data-val="Panchlaish, Chittagong">Chittagong</button>
+        <button class="chip-btn" data-val="Sylhet Sadar, Sylhet">Sylhet</button>
+        <button class="chip-btn" data-val="All Bangladesh">All Bangladesh</button>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-block" id="am-submit">Set Location</button>
+  </div>
+
+  <!-- 5. ADD NEW SERVICE LISTING MODAL -->
+  <div class="modal-sheet hidden" id="add-listing-modal">
+    <button class="sheet-close-btn" data-close="add-listing-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header">
+      <span class="material-symbols-outlined sheet-icon">add_business</span>
+      <h2 id="al-heading">+ Add New Service / Professional</h2>
+    </div>
+
+    <div class="form-row">
+      <label id="lbl-al-name">Service Business Name / Shop Name:</label>
+      <input type="text" id="al-name" class="clay-input" placeholder="e.g. Rahim Electric Service" />
+    </div>
+    <div class="form-row">
+      <label id="lbl-al-wname">Specialist / Worker Personal Name:</label>
+      <input type="text" id="al-worker-name" class="clay-input" placeholder="e.g. Md. Rahim Hossain" />
+    </div>
+    <div class="form-row">
+      <label id="lbl-al-cat">Category:</label>
+      <select id="al-category" class="clay-input"></select>
+    </div>
+    <div class="cascade-grid">
+      <div class="form-row">
+        <label id="lbl-al-phone">Mobile Number:</label>
+        <input type="tel" id="al-phone" class="clay-input" placeholder="017XX-XXXXXX" />
+      </div>
+      <div class="form-row">
+        <label id="lbl-al-nid">National ID (NID) (Optional):</label>
+        <input type="text" id="al-nid" class="clay-input" placeholder="10-17 Digit NID" />
+      </div>
+    </div>
+    <div class="cascade-grid">
+      <div class="form-row">
+        <label id="lbl-al-price">Starting Price (৳):</label>
+        <input type="text" id="al-price" class="clay-input" placeholder="e.g. ৳300 থেকে" />
+      </div>
+      <div class="form-row">
+        <label id="lbl-al-tags">Sub-services / Tags:</label>
+        <input type="text" id="al-tags" class="clay-input" placeholder="Wiring, Fan, Light..." />
+      </div>
+    </div>
+    <div class="form-row">
+      <label id="lbl-al-area">Working Area / Street Address:</label>
+      <input type="text" id="al-area" class="clay-input" placeholder="e.g. Road 4/A, Dhanmondi, Dhaka" />
+    </div>
+    <div class="form-row">
+      <label id="lbl-al-desc">Service Experience & Description:</label>
+      <textarea id="al-description" class="clay-input" rows="3" placeholder="Describe work expertise and specialties..."></textarea>
+    </div>
+
+    <p class="error-msg" id="al-error"></p>
+    <button class="btn btn-primary btn-block" id="al-submit">Publish Service Listing</button>
+  </div>
+
+  <!-- 6. AUTHENTICATION & LOGIN/SIGNUP MODAL -->
+  <div class="modal-sheet hidden" id="auth-modal">
+    <button class="sheet-close-btn" data-close="auth-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header" style="justify-content: center;">
+      <img src="assets/porshi_logo_transparent.png" alt="Porshi (পড়শী)" class="modal-brand-logo-img" />
+    </div>
+    <p class="modal-subtitle" id="auth-tagline" style="text-align: center;">আপনার পাশে, আপনার জন্য</p>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="auth-tab-login">Log In</button>
+      <button class="auth-tab" id="auth-tab-signup">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login-form">
+      <div class="input-group">
+        <span class="material-symbols-outlined">phone_android</span>
+        <input type="text" id="li-identifier" placeholder="Mobile Number: 01700000000" value="01700000000" required />
+      </div>
+      <div class="input-group">
+        <span class="material-symbols-outlined">lock</span>
+        <input type="password" id="li-password" placeholder="Password" value="123456" required />
+      </div>
+      <p class="error-msg" id="li-error"></p>
+      <button type="submit" class="btn btn-primary btn-block">
+        <span class="material-symbols-outlined">login</span>
+        <span id="li-submit-text">Log In</span>
+      </button>
+      <button type="button" class="btn btn-outline btn-block" id="guest-btn" style="margin-top: 8px;">
+        <span class="material-symbols-outlined">explore</span>
+        <span id="guest-btn-text">Continue as Guest (Explore Directory)</span>
+      </button>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form id="signup-form" class="hidden">
+      <div class="role-selector-row">
+        <label class="role-card-opt">
+          <input type="radio" name="su-role" value="citizen" checked />
+          <div class="role-card-inner">
+            <span class="material-symbols-outlined">person</span>
+            <strong id="role-citizen-title">Citizen</strong>
+            <small id="role-citizen-desc">Look for services</small>
+          </div>
+        </label>
+        <label class="role-card-opt">
+          <input type="radio" name="su-role" value="pro" />
+          <div class="role-card-inner">
+            <span class="material-symbols-outlined">engineering</span>
+            <strong id="role-pro-title">Service Pro</strong>
+            <small id="role-pro-desc">Provide services</small>
+          </div>
+        </label>
+      </div>
+
+      <div class="input-group">
+        <span class="material-symbols-outlined">person</span>
+        <input type="text" id="su-name" placeholder="Full Name" required />
+      </div>
+      <div class="input-group">
+        <span class="material-symbols-outlined">phone</span>
+        <input type="tel" id="su-phone" placeholder="Mobile Number (01XXXXXXXXX)" required />
+      </div>
+      <div class="input-group">
+        <span class="material-symbols-outlined">email</span>
+        <input type="email" id="su-email" placeholder="Email Address (Optional)" />
+      </div>
+      <div class="input-group">
+        <span class="material-symbols-outlined">pin_drop</span>
+        <input type="text" id="su-local-area" placeholder="Your Neighborhood / Area (e.g. Dhanmondi)" required />
+      </div>
+      <div class="input-group">
+        <span class="material-symbols-outlined">lock</span>
+        <input type="password" id="su-password" placeholder="Password (Min 6 chars)" required />
+      </div>
+      <p class="error-msg" id="su-error"></p>
+      <button type="submit" class="btn btn-primary btn-block">
+        <span class="material-symbols-outlined">person_add</span>
+        <span id="su-submit-text">Create Account</span>
+      </button>
+    </form>
+
+    <!-- OTP Verification Form -->
+    <form id="verify-form" class="hidden">
+      <div class="otp-instruction-box">
+        <span class="material-symbols-outlined" style="color:var(--primary); font-size:30px;">sms</span>
+        <p id="verify-msg">A 6-digit verification OTP code has been sent to your mobile.</p>
+        <div class="demo-otp-callout">
+          <span id="ve-demo-hint">Demo OTP code: <strong>123456</strong></span>
+          <button type="button" class="btn-sm-text" id="ve-autofill-btn">Autofill</button>
+        </div>
+      </div>
+      <div class="input-group">
+        <span class="material-symbols-outlined">key</span>
+        <input type="text" id="ve-code" placeholder="Enter 6-digit OTP" maxlength="6" required />
+      </div>
+      <p class="error-msg" id="ve-error"></p>
+      <button type="submit" class="btn btn-primary btn-block">
+        <span class="material-symbols-outlined">check_circle</span>
+        <span id="ve-submit-text">Verify & Continue</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- 7. GUEST RESTRICTED ALERT MODAL -->
+  <div class="modal-sheet hidden" id="guest-restricted-modal">
+    <button class="sheet-close-btn" data-close="guest-restricted-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header">
+      <span class="material-symbols-outlined sheet-icon-danger">lock</span>
+      <h2 id="gr-heading">Authentication Required</h2>
+    </div>
+    <p class="modal-subtitle" id="gr-msg">Guest mode is for browsing only. Direct contact numbers, appointment booking, upvoting trust, posting reviews, and community participation are unlocked upon logging in.</p>
+    <div class="action-row-split" style="display:flex; gap:10px; margin-top:16px;">
+      <button class="btn btn-primary btn-block" id="gr-login-btn">Log In / Sign Up</button>
+      <button class="btn btn-outline btn-block" data-close="guest-restricted-modal">Cancel</button>
+    </div>
+  </div>
+
+  <!-- 8. WRITE REVIEW MODAL (FOR CITIZENS TO RATE WORKERS) -->
+  <div class="modal-sheet hidden" id="review-modal">
+    <button class="sheet-close-btn" data-close="review-modal"><span class="material-symbols-outlined">close</span></button>
+    <div class="sheet-header">
+      <span class="material-symbols-outlined sheet-icon">rate_review</span>
+      <h2 id="rv-heading">Rate & Review Specialist</h2>
+    </div>
+    <p class="modal-subtitle" id="rv-target-worker">Giving review for: <strong>Md. Rahim (Rahim Electric Service)</strong></p>
+    <div class="form-row">
+      <label id="lbl-rv-name">Your Name:</label>
+      <input type="text" id="rv-name" class="clay-input" value="রাকিব হাসান" />
+    </div>
+    <div class="form-row">
+      <label id="lbl-rv-stars">Rating (1 to 5 Stars):</label>
+      <div class="star-rating-picker" id="star-picker">
+        <span data-value="1" class="active">★</span>
+        <span data-value="2" class="active">★</span>
+        <span data-value="3" class="active">★</span>
+        <span data-value="4" class="active">★</span>
+        <span data-value="5" class="active">★</span>
+      </div>
+    </div>
+    <div class="form-row">
+      <label id="lbl-rv-comment">Your Feedback & Experience:</label>
+      <textarea id="rv-comment" class="clay-input" rows="3" placeholder="How was the service quality, honesty, and punctuality?"></textarea>
+    </div>
+    <p class="error-msg" id="rv-error"></p>
+    <button class="btn btn-primary btn-block" id="rv-submit">Submit Rating & Review</button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <span id="toast-text">Message</span>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER (ONLY SINGLE CLEAN ATTRIBUTION TO SHREYA)
+       ======================================================================== -->
+  <footer class="web-footer">
+    <div class="footer-container">
+      <div class="footer-brand-block">
+        <div class="footer-logo-row">
+          <img src="assets/porshi_logo_transparent.png" alt="Porshi (পড়শী)" class="porshi-brand-logo-img" style="height: 34px;" />
+        </div>
+        <p class="footer-desc" id="footer-tagline">Verified Neighborhood Services & Community Platform across Bangladesh</p>
+      </div>
+
+      <div class="footer-credit-block">
+        <p id="footer-credit">Developed by <a href="https://github.com/Shreyalien" target="_blank" rel="noopener" class="author-direct-link">Shreya</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <p id="footer-copy-text">© 2026 Porshi (পড়শী) · Open Source Project · Developed by <a href="https://github.com/Shreyalien" target="_blank" rel="noopener">Shreya</a></p>
+    </div>
+  </footer>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="bangladesh-data.js"></script>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

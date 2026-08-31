@@ -1,0 +1,17 @@
+{
+  "name": "Porshi — Hyperlocal Services & Neighborhood",
+  "short_name": "Porshi",
+  "description": "Your neighborhood services and community directory in Bangladesh",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121417",
+  "theme_color": "#10B981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2310B981'/><path d='M50 20 L25 45 L35 45 L35 75 L65 75 L65 45 L75 45 Z' fill='%23FFFFFF'/><circle cx='50' cy='56' r='7' fill='%2310B981'/></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
