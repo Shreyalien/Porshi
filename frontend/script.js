@@ -9,6 +9,40 @@ function getCleanAvatar(seed, bgHex = 'b6e3f4') {
   return `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(seed)}&mouth=smile&eyebrows=default&eyes=default&accessoriesProbability=0&backgroundColor=${bgHex}`;
 }
 
+// Client UI & Interaction Protection (Prevent contextmenu, inspect shortcuts & text selection copy)
+(function initUIProtection() {
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    return false;
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'F12') {
+      e.preventDefault();
+      return false;
+    }
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      (e.key === 'u' || e.key === 'U' ||
+       e.key === 's' || e.key === 'S' ||
+       (e.shiftKey && (e.key === 'I' || e.key === 'i' ||
+                       e.key === 'J' || e.key === 'j' ||
+                       e.key === 'C' || e.key === 'c')))
+    ) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  document.addEventListener('copy', (e) => {
+    const target = e.target;
+    if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+      return;
+    }
+    e.preventDefault();
+  });
+})();
+
 // 40+ Category Material Symbols & Metadata Mapping
 const ALL_CATEGORIES_DATA = [
   { id: 'electrician', group: 'home_services', icon: 'bolt', nameEn: 'Electrician', nameBn: 'ইলেকট্রিশিয়ান', count: 0 },
